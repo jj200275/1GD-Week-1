@@ -10,12 +10,15 @@ public class penguinmovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         me.linearVelocityX = -(float)velocity;
+        //me.AddForce(new Vector2(-(float)velocity, 0));
+
         if (transform.position.x < -10)
         {
             transform.position = new Vector3(9,4);
+            //me.linearVelocityX = 0;
         }
     }
 }
